@@ -1,6 +1,6 @@
 from langchain_huggingface import ChatHuggingFace, HuggingFacePipeline, HuggingFaceEndpoint
-from dotenv import load_dotenv
-load_dotenv()
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
 
 # llm = HuggingFacePipeline.from_model_id(
 #     model_id="TinyLlama/TinyLlama-1.1B-Chat-v1.0",

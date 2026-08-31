@@ -1,7 +1,7 @@
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 from langchain_core.prompts import PromptTemplate, load_prompt
-from dotenv import load_dotenv
-load_dotenv()
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
 
 import streamlit as st
 
@@ -43,12 +43,6 @@ style_input = st.radio(
 template = load_prompt("template.json")
 
 if st.button("Submit"):
-
-    # prompt = template.format(
-    #     paper_input=research_paper,
-    #     length_input=length_input,
-    #     style_input=style_input,
-    # )
 
     chain = template | model
 
